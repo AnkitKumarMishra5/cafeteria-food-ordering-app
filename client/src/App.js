@@ -1,9 +1,22 @@
-function App() {
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
+
+import NavbarComponent from "./components/Navbar/Navbar";
+import Form from "./components/Form/Form";
+import WelcomeBanner from "./components/WelcomeBanner/WelcomeBanner";
+
+import './App.css'
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>Office Cafeteria App</h1>
-    </div>
+    <>
+      <Container fluid>
+        <NavbarComponent />
+        <WelcomeBanner />
+        <Form />
+      </Container>
+    </>
   );
-}
+};
 
 export default App;
