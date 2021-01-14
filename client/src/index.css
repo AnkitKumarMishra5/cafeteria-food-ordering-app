@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Playfair Display', serif;
+    background-color: #330033;
+    overflow-x: hidden;
+}
+*{
+    color: white !important;
+}

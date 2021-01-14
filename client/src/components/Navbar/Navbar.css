@@ -1,0 +1,42 @@
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+.navbar{
+    animation: 0.7s ease-out 0s 1 slideInFromTop;
+}
+.navbar-light .navbar-nav .nav-link{
+    font-size: 1.5em;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    font-size: 1.6em;
+    font-weight: bolder;
+}
+.navbar-brand{
+    font-size: 1.7em;
+    font-weight: bolder;
+}
+.navbar-light .navbar-toggler {
+    background-color: white;
+}
+.bg-light{
+    background-color: #330033 !important;
+}
+.bg-light:hover{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+@media (min-width: 992px){
+.navbar{
+    padding: .5rem 2rem;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+}
