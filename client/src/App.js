@@ -1,19 +1,26 @@
+import { Switch, Route } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 
+import "./App.css";
+
 import NavbarComponent from "./components/Navbar/Navbar";
-import Form from "./components/Form/Form";
 import WelcomeBanner from "./components/WelcomeBanner/WelcomeBanner";
 
-import './App.css'
+import Form from "./components/Form/Form";
+import Preview from "./components/Preview";
 
 const App = () => {
   return (
     <>
       <Container fluid>
         <NavbarComponent />
-        <WelcomeBanner />
-        <Form />
+        <Switch>
+          <Route exact path="/" component={WelcomeBanner} />
+          <Route path="/form" component={Form} />
+          <Route path="/preview" component={Preview} />
+        </Switch>
       </Container>
     </>
   );
