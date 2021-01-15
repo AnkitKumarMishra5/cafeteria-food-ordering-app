@@ -9,6 +9,9 @@
 
 .navbar{
     animation: 0.7s ease-out 0s 1 slideInFromTop;
+    z-index: 2;
+    position: sticky;
+    top: 0;
 }
 .navbar-light .navbar-nav .nav-link{
     font-size: 1.5em;
@@ -39,4 +42,13 @@
     padding-right: 1.5rem;
     padding-left: 1.5rem;
 }
+}
+
+@media (max-width: 420px){
+    .navbar{
+        width: 100%;
+    }
+    .bg-light:hover{
+        background-color: rgba(0, 0, 0, 0.8) !important;
+    }
 }

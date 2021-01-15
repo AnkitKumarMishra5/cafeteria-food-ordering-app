@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Row, Col, Form, InputGroup, Button } from "react-bootstrap";
+import bsCustomFileInput from 'bs-custom-file-input';
 
 import "./Form.css";
 
@@ -10,13 +11,27 @@ const FormComponent = () => {
     employeeID: "",
     email: "",
     mobile: "",
-    password: "",
+    idCard: "",
+    password: ""
   });
+
+  const idCard = useRef(null);
+
+  useEffect(() => {
+    bsCustomFileInput.init();
+    console.log(newUser);
+  },[newUser])
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    console.log(newUser)
+  }
+
   return (
     <Row className="justify-content-center" id="register">
       <Col md={6} xs={12} className="form-section">
         <h2>Register Here</h2>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Form.Row>
             <Form.Group as={Col} md="6">
               <Form.Label>Full Name</Form.Label>
@@ -25,8 +40,8 @@ const FormComponent = () => {
                 name="fullName"
                 type="text"
                 placeholder="Full Name"
-                value={newUser["fullName"]}
-                onInput={(e) => setNewUser({ fullName: e.target.value })}
+                value={newUser.fullName}
+                onInput={(e) => setNewUser({...newUser, fullName: e.target.value})}
               />
             </Form.Group>
             <Form.Group as={Col} md="6">
@@ -36,8 +51,8 @@ const FormComponent = () => {
                 name="orgName"
                 type="text"
                 placeholder="Organization Name"
-                value={newUser["orgName"]}
-                onInput={(e) => setNewUser({ fullName: e.target.value })}
+                value={newUser.orgName}
+                onInput={(e) => setNewUser({...newUser, orgName: e.target.value})}
               />
             </Form.Group>
           </Form.Row>
@@ -49,8 +64,8 @@ const FormComponent = () => {
                 name="employeeID"
                 type="text"
                 placeholder="Emp. ID"
-                value={newUser["employeeID"]}
-                onInput={(e) => setNewUser({ fullName: e.target.value })}
+                value={newUser.employeeID}
+                onInput={(e) => setNewUser({...newUser, employeeID: e.target.value})}
               />
             </Form.Group>
             <Form.Group as={Col} md="4">
@@ -65,8 +80,8 @@ const FormComponent = () => {
                   name="email"
                   type="text"
                   placeholder="Email"
-                  value={newUser["email"]}
-                  onInput={(e) => setNewUser({ fullName: e.target.value })}
+                  value={newUser.email}
+                  onInput={(e) => setNewUser({...newUser, email: e.target.value})}
                 />
               </InputGroup>
             </Form.Group>
@@ -77,15 +92,21 @@ const FormComponent = () => {
                 name="mobile"
                 type="text"
                 placeholder="Mobile"
-                value={newUser["mobile"]}
-                onInput={(e) => setNewUser({ fullName: e.target.value })}
+                value={newUser.mobile}
+                onInput={(e) => setNewUser({...newUser, mobile: e.target.value})}
               />
             </Form.Group>
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} md="4">
               <Form.Label>ID Card</Form.Label>
-              <Form.File id="custom-file" label="Upload ID Card" custom />
+              <Form.File
+                label="Upload ID Card"
+                accept=".jpeg,.png"
+                custom
+                ref={idCard}
+                onInput={() => setNewUser({...newUser, idCard: URL.createObjectURL(idCard.current.files[0])})}
+              />
             </Form.Group>
             <Form.Group as={Col} md="4">
               <Form.Label>Password</Form.Label>
@@ -94,8 +115,8 @@ const FormComponent = () => {
                 name="password"
                 type="password"
                 placeholder="Password"
-                value={newUser["password"]}
-                onInput={(e) => setNewUser({ fullName: e.target.value })}
+                value={newUser.password}
+                onInput={(e) => setNewUser({...newUser, password: e.target.value})}
               />
             </Form.Group>
             <Form.Group as={Col} md="4">
@@ -105,8 +126,6 @@ const FormComponent = () => {
                 name="confirmPassword"
                 type="password"
                 placeholder="Confirm Password"
-                value={newUser["confirmPassword"]}
-                onInput={(e) => setNewUser({ fullName: e.target.value })}
               />
             </Form.Group>
           </Form.Row>

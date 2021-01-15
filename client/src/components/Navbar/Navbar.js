@@ -1,5 +1,8 @@
 import { Navbar, Nav } from "react-bootstrap";
+
 import './Navbar.css'
+
+import {NavLink, withRouter} from 'react-router-dom';
 
 const NavbarComponent = () => {
   return (
@@ -8,20 +11,20 @@ const NavbarComponent = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#menu">Menu</Nav.Link>
-          <Nav.Link href="#order">Order</Nav.Link>
-          <Nav.Link href="#register">New User? Register</Nav.Link>
+          <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+          {/* <NavLink href="#menu">Menu</NavLink>
+          <NavLink href="#order">Order</NavLink> */}
+          <Nav.Link as={NavLink} to='/form'>New User? Register</Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link href="#profile">Hi, User</Nav.Link>
-          <Nav.Link href="#logout">
+          {/* <NavLink href="#profile">Hi, User</NavLink>
+          <NavLink href="#logout">
             Logout
-          </Nav.Link>
+          </NavLink> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
 };
 
-export default NavbarComponent;
+export default withRouter(NavbarComponent);
