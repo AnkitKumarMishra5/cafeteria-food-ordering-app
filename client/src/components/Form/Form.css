@@ -43,7 +43,11 @@ label, h2{
     box-shadow: 0 0 10px #330033;
 }
 
-@media (max-width: 400px){
+h2{
+    margin-top: 10px;
+}
+
+@media (max-width: 420px){
     #register{
         height: 110vh;
         margin-bottom: 20px;
