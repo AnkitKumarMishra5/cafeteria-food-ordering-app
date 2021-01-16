@@ -48,7 +48,7 @@ const Login = () => {
                     <Col lg={6} className="rightContainer">
                         <Row className="header">
                             <Col lg={12}>
-                                <h1 class="loginHeading">Login</h1>
+                                <h1 className="loginHeading">Login</h1>
                             </Col>
                         </Row>
                         <div className="content">
