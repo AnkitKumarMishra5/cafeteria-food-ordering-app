@@ -27,7 +27,7 @@ background-size: cover;
     }
 
 }
-img{
+.loginImg{
     max-height: 526px;
     border-radius: 10px;
 }
@@ -56,4 +56,9 @@ img{
 .header{
    position: relative;
    top:10%;
+}
+.loginHeading{
+    font-size: 2em;
+    font-weight: bold;
+    color: #330033 !important;
 }
