@@ -5,12 +5,13 @@
 .menu-card-container{
     padding: 0px 50px 0px 50px;
 }
-/* .col-lg-4{
-    margin-bottom: 30px;
-} */ */
 .menu-card{
     width: 18rem;
-    height: 24rem;
+    height: 25rem;
+    margin-bottom: 30px;
+}
+.menu-text{
+font-size: 1em;
 }
 .dishName{
     float: left;
@@ -72,4 +73,7 @@
     max-height: 35px;
     border-color: #330033;
     background-color: #330033;
+}
+.card-body-menu *{
+    color: #330033 !important;
 }
