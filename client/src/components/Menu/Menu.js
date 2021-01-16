@@ -28,10 +28,10 @@ const Menu = () => {
     }
     return (
         <div className="menuContainer">
-            <Container>
+            <Container class="menu-card-container">
                 <Row>
                     <Col lg={4} md={6} sm={12}>
-                        <Card>
+                        <Card class="menu-card">
                             <Card.Img variant="top" src="https://images.unsplash.com/photo-1581073766947-e8f3ef5393a4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80" />
                             <Card.Body>
                                 <Card.Title className="dishName">French Fries</Card.Title>

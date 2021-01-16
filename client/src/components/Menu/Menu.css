@@ -2,13 +2,13 @@
     position: relative;
     top: 200px;
 }  
-/*.container{
+.menu-card-container{
     padding: 0px 50px 0px 50px;
 }
-.col-lg-4{
+/* .col-lg-4{
     margin-bottom: 30px;
-} */
-.card{
+} */ */
+.menu-card{
     width: 18rem;
     height: 24rem;
 }
