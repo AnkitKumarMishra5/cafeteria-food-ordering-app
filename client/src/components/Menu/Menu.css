@@ -43,14 +43,14 @@
     float: left;
     border-color: blueviolet;
 }
-.show{
+.showMenu{
     max-height: 35px;
     background-color:white;
     color: #330033;
     float:left;
     border-color: blueviolet;
 }
-.show:hover{
+.showMenu:hover{
     max-height: 35px;
     border-color: #330033;
     background-color: white;

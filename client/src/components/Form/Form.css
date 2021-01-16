@@ -50,7 +50,7 @@ h2{
 @media (max-width: 420px){
     #register{
         height: 110vh;
-        margin-bottom: 20px;
+        margin: 20px;
     }
     .form-section{
         height: 100%;

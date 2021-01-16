@@ -13,7 +13,7 @@ const Preview = ({ newUser }) => {
     <Row className="justify-content-center" id="preview">
       <Col md={4} xs={12} className="preview-section">
         <h2>Preview Registration Details [2/3]</h2>
-        <Card>
+        <Card className="preview-card">
           <Card.Img
             variant="top"
             src="https://www.fake-id.com/uploads/product/buy-fake-photo-id-front.jpg"
