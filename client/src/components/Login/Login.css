@@ -1,0 +1,59 @@
+html,body{
+background: url(../../assests/trianglify-lowresss.png);
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.mainContainer{
+    background-color: white;
+    border: 0.1px solid grey;
+    border-radius: 10px;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    text-align: center;
+    height: 70%;
+    width: 50%;
+    box-shadow:  10px 10px 5px rgb(170, 124, 213);
+}
+@media only screen and (max-width: 540px)
+{
+    .mainContainer{
+        top: 0;
+        left: 0;
+        height: 150%;
+        width: 100%;
+        padding: 0;
+    }
+
+}
+img{
+    max-height: 526px;
+    border-radius: 10px;
+}
+
+.leftContainer{
+    padding-left: 1px;
+    overflow: hidden;
+}
+.content{
+    padding: 10px 30px 10px 30px;
+    position: relative;
+    top: 20%;
+    justify-content: center;
+    min-height: inherit;
+    text-align: center;
+}
+.loginButton{
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 50%;
+    background-color: #330033;
+}
+.loginButton:hover{
+    background-color: blueviolet;
+}
+.header{
+   position: relative;
+   top:10%;
+}
