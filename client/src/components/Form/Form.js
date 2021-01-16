@@ -1,21 +1,15 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Row, Col, Form, InputGroup, Button } from "react-bootstrap";
+import { withRouter } from 'react-router-dom';
+
 import bsCustomFileInput from 'bs-custom-file-input';
 
 import "./Form.css";
 
-const FormComponent = () => {
-  const [newUser, setNewUser] = useState({
-    fullName: "",
-    orgName: "",
-    employeeID: "",
-    email: "",
-    mobile: "",
-    idCard: "",
-    password: ""
-  });
-
+const FormComponent = (props) => {
   const idCard = useRef(null);
+  const newUser = props.newUser;
+  const setNewUser = props.setNewUser;
 
   useEffect(() => {
     bsCustomFileInput.init();
@@ -25,12 +19,13 @@ const FormComponent = () => {
   const handleSubmit = (e) =>{
     e.preventDefault()
     console.log(newUser)
+    props.history.push('/preview');
   }
 
   return (
     <Row className="justify-content-center" id="register">
       <Col md={6} xs={12} className="form-section">
-        <h2>Register Here</h2>
+        <h2>Register Here [1/3]</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Row>
             <Form.Group as={Col} md="6">
@@ -138,4 +133,4 @@ const FormComponent = () => {
   );
 };
 
-export default FormComponent;
+export default withRouter(FormComponent);

@@ -17,7 +17,7 @@
     font-size: 1.5em;
 }
 .navbar-light .navbar-nav .nav-link:hover{
-    font-size: 1.6em;
+    font-size: 1.55em;
     font-weight: bolder;
 }
 .navbar-brand{
@@ -50,5 +50,12 @@
     }
     .bg-light:hover{
         background-color: rgba(0, 0, 0, 0.8) !important;
+    }
+    .navbar-light .navbar-nav .nav-link{
+        font-size: 1.2em;
+    }
+    .navbar-light .navbar-nav .nav-link:hover{
+        font-size: 1.25em;
+        font-weight: bolder;
     }
 }

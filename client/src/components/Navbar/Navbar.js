@@ -7,7 +7,7 @@ import {NavLink, withRouter} from 'react-router-dom';
 const NavbarComponent = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-      <Navbar.Brand href="#home">Office-Cafeteria App</Navbar.Brand>
+      <Navbar.Brand as={NavLink} to="/">Office-Cafeteria App</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
