@@ -28,7 +28,7 @@ const Menu = () => {
     }
     return (
         <div className="menuContainer">
-            <Container class="menu-card-container">
+            <Container className="menu-card-container">
                 <Row>
                     <Col lg={4} md={6} sm={12}>
                         <Card className="menu-card">
@@ -78,7 +78,7 @@ const Menu = () => {
                                 </Card.Text>
                                 <div className="addToCart">
                                     {show  && (<Button className="decrement" onClick={()=>{DecrementItem()}}>-</Button>)}
-                                    <Button className="show" onClick={()=>{ToggleClick()}}> {(!show && count===0) ? 'ADD' : count }</Button>
+                                    <Button className="showMenu" onClick={()=>{ToggleClick()}}> {(!show && count===0) ? 'ADD' : count }</Button>
                                     {show  && (<Button className="increment" onClick={()=>{IncrementItem()}}> +</Button>)}
                                 </div>  
                             </Card.Body>
