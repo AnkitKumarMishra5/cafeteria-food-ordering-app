@@ -9,9 +9,9 @@ import "./App.css";
 
 import NavbarComponent from "./components/Navbar/Navbar";
 import WelcomeBanner from "./components/WelcomeBanner/WelcomeBanner";
-
 import Form from "./components/Form/Form";
 import Preview from "./components/Preview/Preview";
+import Menu from './components/Menu/Menu';
 
 const App = () => {
   const [newUser, setNewUser] = useState({
@@ -32,6 +32,7 @@ const App = () => {
           <Route exact path="/" component={WelcomeBanner} />
           <Route path="/form" render={() => (<Form newUser={newUser} setNewUser={setNewUser} />)} />
           <Route path="/preview" render={() => (<Preview newUser={newUser} />)} />
+          <Route path="/menu" component={Menu} />
         </Switch>
       </Container>
     </>
