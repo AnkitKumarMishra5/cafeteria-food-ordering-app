@@ -13,6 +13,7 @@ import Form from "./components/Form/Form";
 import Preview from "./components/Preview/Preview";
 import Menu from './components/Menu/Menu';
 import Login from './components/Login/Login';
+import Success from "./components/Success/Success"
 
 const App = () => {
   const [newUser, setNewUser] = useState({
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/preview" render={() => (<Preview newUser={newUser} />)} />
           <Route path="/login" component={Login} />
           <Route path="/menu" component={Menu} />
+          <Route path="/success" render={() => (<Success newUser={newUser} />)} />
         </Switch>
       </Container>
     </>

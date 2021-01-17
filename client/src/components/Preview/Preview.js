@@ -6,6 +6,8 @@ import {
   Button,
 } from "react-bootstrap";
 
+import {Link, withRouter} from 'react-router-dom';
+
 import "./Preview.css";
 
 const Preview = ({ newUser }) => {
@@ -44,10 +46,10 @@ const Preview = ({ newUser }) => {
           </Table>
 
           <Card.Footer>
-            <Card.Link href="#">
+            <Card.Link as={Link} to="/form">
               <Button variant="danger">Edit</Button>
             </Card.Link>
-            <Card.Link href="#">
+            <Card.Link as={Link} to="/success">
               <Button variant="success">Proceed</Button>
             </Card.Link>
           </Card.Footer>
@@ -57,4 +59,4 @@ const Preview = ({ newUser }) => {
   );
 };
 
-export default Preview;
+export default withRouter(Preview);
