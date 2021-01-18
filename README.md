@@ -6,6 +6,7 @@ MERN Stack | StackHack 2.0 - HackerEarth | TEAM: Web Geeks
 On Front End:
 
 Create a form on the UI which captures :
+
 1. Fields for Data Capture (All fields are mandatory)
 
 Full Name
@@ -14,10 +15,12 @@ Employee ID no.
 Mobile No.
 E-Mail
 Upload ID Card (Formats: png, jpeg)
+
 2. Provide a preview Screen which should :
 
 List all the fields as above.
 Display ID card in the preview.
+
 3. On Submission :
 
 Registration ID has to be generated and displayed on Success Screen.
