@@ -1,6 +1,5 @@
 // import { useState} from "react";
 import React, { Suspense, lazy, useState } from "react";
-
 import { Switch, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,7 +7,9 @@ import { Container } from "react-bootstrap";
 
 import "./App.css";
 
-import Loading from './components/Loading'
+import axios from "axios";
+
+import Loading from "./components/Loading";
 
 const NavbarComponent = lazy(() => import("./components/Navbar/Navbar"));
 const WelcomeBanner = lazy(() =>
@@ -31,20 +32,33 @@ const App = () => {
     password: "",
   });
 
+  const handleSubmit = (newUser) => {
+    axios
+      .post("http://localhost:5000/api/users", newUser)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <Container fluid>
-        <Suspense
-          fallback={
-            <Loading />
-          }
-        >
+        <Suspense fallback={<Loading />}>
           <NavbarComponent />
           <Switch>
             <Route exact path="/" component={WelcomeBanner} />
             <Route
               path="/form"
-              render={() => <Form newUser={newUser} setNewUser={setNewUser} />}
+              render={() => (
+                <Form
+                  newUser={newUser}
+                  setNewUser={setNewUser}
+                  handleSubmit={handleSubmit}
+                />
+              )}
             />
             <Route
               path="/preview"

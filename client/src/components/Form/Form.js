@@ -19,6 +19,7 @@ const FormComponent = (props) => {
   const handleSubmit = (e) =>{
     e.preventDefault()
     console.log(newUser)
+    props.handleSubmit(newUser)
     props.history.push('/preview');
   }
 
