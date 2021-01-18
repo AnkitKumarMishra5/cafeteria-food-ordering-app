@@ -1,4 +1,5 @@
-import { useState} from "react";
+// import { useState} from "react";
+import React, { Suspense, lazy, useState } from "react";
 
 import { Switch, Route } from "react-router-dom";
 
@@ -7,13 +8,17 @@ import { Container } from "react-bootstrap";
 
 import "./App.css";
 
-import NavbarComponent from "./components/Navbar/Navbar";
-import WelcomeBanner from "./components/WelcomeBanner/WelcomeBanner";
-import Form from "./components/Form/Form";
-import Preview from "./components/Preview/Preview";
-import Menu from './components/Menu/Menu';
-import Login from './components/Login/Login';
-import Success from "./components/Success/Success"
+import Loading from './components/Loading'
+
+const NavbarComponent = lazy(() => import("./components/Navbar/Navbar"));
+const WelcomeBanner = lazy(() =>
+  import("./components/WelcomeBanner/WelcomeBanner")
+);
+const Form = lazy(() => import("./components/Form/Form"));
+const Preview = lazy(() => import("./components/Preview/Preview"));
+const Menu = lazy(() => import("./components/Menu/Menu"));
+const Login = lazy(() => import("./components/Login/Login"));
+const Success = lazy(() => import("./components/Success/Success"));
 
 const App = () => {
   const [newUser, setNewUser] = useState({
@@ -23,21 +28,36 @@ const App = () => {
     email: "",
     mobile: "",
     idCard: "",
-    password: ""
+    password: "",
   });
 
   return (
     <>
       <Container fluid>
-        <NavbarComponent />
-        <Switch>
-          <Route exact path="/" component={WelcomeBanner} />
-          <Route path="/form" render={() => (<Form newUser={newUser} setNewUser={setNewUser} />)} />
-          <Route path="/preview" render={() => (<Preview newUser={newUser} />)} />
-          <Route path="/login" component={Login} />
-          <Route path="/menu" component={Menu} />
-          <Route path="/success" render={() => (<Success newUser={newUser} />)} />
-        </Switch>
+        <Suspense
+          fallback={
+            <Loading />
+          }
+        >
+          <NavbarComponent />
+          <Switch>
+            <Route exact path="/" component={WelcomeBanner} />
+            <Route
+              path="/form"
+              render={() => <Form newUser={newUser} setNewUser={setNewUser} />}
+            />
+            <Route
+              path="/preview"
+              render={() => <Preview newUser={newUser} />}
+            />
+            <Route path="/login" component={Login} />
+            <Route path="/menu" component={Menu} />
+            <Route
+              path="/success"
+              render={() => <Success newUser={newUser} />}
+            />
+          </Switch>
+        </Suspense>
       </Container>
     </>
   );
