@@ -33,7 +33,7 @@ const Preview = (props) => {
             <tbody>
               <tr>
                 <td>Name</td>
-                <td className="values">{newUser.fullName}</td>
+                <td className="values">{newUser.username}</td>
               </tr>
               <tr>
                 <td>Organization</td>
