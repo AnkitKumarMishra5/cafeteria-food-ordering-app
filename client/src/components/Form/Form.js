@@ -32,11 +32,11 @@ const FormComponent = (props) => {
               <Form.Label>Full Name</Form.Label>
               <Form.Control
                 required
-                name="fullName"
+                name="username"
                 type="text"
                 placeholder="Full Name"
-                value={newUser.fullName}
-                onInput={(e) => setNewUser({...newUser, fullName: e.target.value})}
+                value={newUser.username}
+                onInput={(e) => setNewUser({...newUser, username: e.target.value})}
               />
             </Form.Group>
             <Form.Group as={Col} md="6">
@@ -73,7 +73,7 @@ const FormComponent = (props) => {
                   aria-describedby="inputGroupPrepend"
                   required
                   name="email"
-                  type="text"
+                  type="email"
                   placeholder="Email"
                   value={newUser.email}
                   onInput={(e) => setNewUser({...newUser, email: e.target.value})}

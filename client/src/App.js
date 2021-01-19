@@ -23,7 +23,7 @@ const Success = lazy(() => import("./components/Success/Success"));
 
 const App = () => {
   const [newUser, setNewUser] = useState({
-    fullName: "",
+    username: "",
     orgName: "",
     employeeID: "",
     email: "",
