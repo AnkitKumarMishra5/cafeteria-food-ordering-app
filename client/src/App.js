@@ -32,7 +32,7 @@ const App = () => {
     password: "",
   });
 
-  const handleSubmit = (newUser) => {
+  const handleSubmit = () => {
     axios
       .post("http://localhost:5000/api/users", newUser)
       .then((res) => {

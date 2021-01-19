@@ -18,29 +18,29 @@ const Preview = ({ newUser }) => {
         <Card className="preview-card">
           <Card.Img
             variant="top"
-            src="https://www.fake-id.com/uploads/product/buy-fake-photo-id-front.jpg"
+            src={newUser.idCard}
           />
           <Table responsive="xl">
             <tbody>
               <tr>
                 <td>Name</td>
-                <td className="values">Ankit Kumar</td>
+                <td className="values">{newUser.fullName}</td>
               </tr>
               <tr>
                 <td>Organization</td>
-                <td className="values">Web Geeks Mangalore</td>
+                <td className="values">{newUser.orgName}</td>
               </tr>
               <tr>
                 <td>Employee ID</td>
-                <td className="values">110098788</td>
+                <td className="values">{newUser.employeeID}</td>
               </tr>
               <tr>
                 <td>Email</td>
-                <td className="values email">ankitkumarmishra.campk12@gmail.com</td>
+                <td className="values email">{newUser.email}</td>
               </tr>
               <tr>
                 <td>Mobile No.:</td>
-                <td className="values">9879879876</td>
+                <td className="values">{newUser.mobile}</td>
               </tr>
             </tbody>
           </Table>
