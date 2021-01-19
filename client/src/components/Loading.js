@@ -9,7 +9,7 @@ const Loading = () => {
       };
   return (
     <div style={ loadStyle }>
-      <img src={ LoadingGIF } />
+      <img src={ LoadingGIF } alt="Loading..."/>
     </div>
   );
 };

@@ -52,17 +52,13 @@ const App = () => {
             <Route exact path="/" component={WelcomeBanner} />
             <Route
               path="/form"
-              render={() => (
-                <Form
-                  newUser={newUser}
-                  setNewUser={setNewUser}
-                  handleSubmit={handleSubmit}
-                />
-              )}
+              render={() => <Form newUser={newUser} setNewUser={setNewUser} />}
             />
             <Route
               path="/preview"
-              render={() => <Preview newUser={newUser} />}
+              render={() => (
+                <Preview newUser={newUser} handleSubmit={handleSubmit} />
+              )}
             />
             <Route path="/login" component={Login} />
             <Route path="/menu" component={Menu} />

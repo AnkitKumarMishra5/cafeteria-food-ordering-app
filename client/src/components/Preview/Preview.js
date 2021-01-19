@@ -10,7 +10,16 @@ import {Link, withRouter} from 'react-router-dom';
 
 import "./Preview.css";
 
-const Preview = ({ newUser }) => {
+const Preview = (props) => {
+  const newUser = props.newUser;
+  
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    console.log(newUser)
+    props.handleSubmit()
+    props.history.push('/');
+  }
+
   return (
     <Row className="justify-content-center" id="preview">
       <Col md={4} xs={12} className="preview-section">
@@ -50,7 +59,7 @@ const Preview = ({ newUser }) => {
               <Button variant="danger">Edit</Button>
             </Card.Link>
             <Card.Link as={Link} to="/success">
-              <Button variant="success">Proceed</Button>
+              <Button variant="success" onClick={handleSubmit}>Proceed</Button>
             </Card.Link>
           </Card.Footer>
         </Card>
