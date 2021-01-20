@@ -1,0 +1,46 @@
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-20%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+#main-success-container{
+    height: 60vh;
+    margin: 10px;
+    animation: 0.5s ease-out 0s 1 slideInFromTop;
+    margin-top: 30px;
+}
+#main-success-container *{
+    color: #330033 !important;
+}
+.main-success-div{
+    border-radius: 5px;
+    background-color: white !important;
+    margin: 75px auto;
+}
+.values{
+    text-transform: uppercase;
+}
+.email{
+    text-transform: initial;
+}
+.new-table{
+    margin-top: 30px;
+}
+
+@media (min-width: 992px){
+.values{
+    word-break: break-all;
+}
+}
+
+@media (max-width: 540px){
+    .main-success-div {
+        margin-bottom: 20px;
+    }
+    .form-section{
+        height: 100%;
+    }
+}
