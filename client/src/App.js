@@ -20,6 +20,7 @@ const Preview = lazy(() => import("./components/Preview/Preview"));
 const Menu = lazy(() => import("./components/Menu/Menu"));
 const Login = lazy(() => import("./components/Login/Login"));
 const Success = lazy(() => import("./components/Success/Success"));
+const Cart = lazy(() => import("./components/Cart/Cart"));
 
 const App = () => {
   const [newUser, setNewUser] = useState({
@@ -65,6 +66,9 @@ const App = () => {
             <Route
               path="/success"
               render={() => <Success newUser={newUser} />}
+            />
+            <Route
+              path="/cart" component={Cart}
             />
           </Switch>
         </Suspense>
