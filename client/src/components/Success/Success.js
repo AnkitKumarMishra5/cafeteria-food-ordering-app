@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Button, Card, Table } from 'react-bootstrap';
+import {Row, Col, Table } from 'react-bootstrap';
 import './Success.css';
 
 const Success = () => {
