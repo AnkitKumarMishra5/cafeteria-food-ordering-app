@@ -20,6 +20,10 @@
     font-size: 1.55em;
     font-weight: bolder;
 }
+.activeLink {
+    font-size: 1.55em;
+    font-weight: bolder;
+ }
 .navbar-brand{
     font-size: 1.7em;
     font-weight: bolder;
@@ -32,6 +36,9 @@
 }
 .bg-light:hover{
     background-color: rgba(0, 0, 0, 0.3) !important;
+}
+a:hover{
+    text-decoration: none;
 }
 
 @media (min-width: 992px){
