@@ -54,8 +54,8 @@ font-size: 1em;
 .showMenu:hover{
     max-height: 35px;
     border-color: #330033;
-    background-color: white;
-    color: #330033;
+    background-color: #330033;
+    color: white !important;
     float:left;
 }
 .increment{

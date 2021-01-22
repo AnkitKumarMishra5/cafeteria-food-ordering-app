@@ -62,7 +62,6 @@ const App = () => {
               )}
             />
             <Route path="/login" component={Login} />
-            <Route path="/menu" component={Menu} />
             <Route
               path="/success"
               render={() => <Success newUser={newUser} />}

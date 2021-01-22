@@ -27,7 +27,7 @@ const Menu = () => {
         setShow(true);
     }
     return (
-        <div className="menuContainer">
+        <div className="menuContainer" id="menu">
             <Container className="menu-card-container">
                 <Row>
                     <Col lg={4} md={6} sm={12}>
