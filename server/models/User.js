@@ -28,8 +28,35 @@ const userSchema = mongoose.Schema({
     },
     password:{
         type: String
+    },
+    regId:{
+        type: Number,
+        default: 0
     }
-})
+},{ timestamps: true })
+
+
+// COUNTER SCHEMA - FOR CONTINUOUS REGISTRATION ID'S 
+var CounterSchema = mongoose.Schema({
+    seq: { type: Number, default: 0 }
+});
+
+var Counter = mongoose.model('Counter', CounterSchema);
+
+// MIDDLEWARE
+userSchema.pre('save', function(next){
+    var newUser = this;
+    Counter.findByIdAndUpdate({_id: "6009fa4448734dcc5ece655a"}, {$inc: { seq: 1} }, function(error, counter)   {
+        if(error){
+            return next(error);
+        }
+        if(!newUser.isNew)
+            next();
+        newUser.regId = counter.seq;
+        next();
+    });
+});
+
 
 userSchema.plugin(passportLocalMongoose);
 
