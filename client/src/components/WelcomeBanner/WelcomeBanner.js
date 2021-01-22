@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Row, Col, Jumbotron, Carousel } from "react-bootstrap";
 
 import './WelcomeBanner.css'
+import Menu from '../Menu/Menu'
 
 const WelcomeBanner = () => {
   const [index, setIndex] = useState(0);
@@ -11,6 +12,7 @@ const WelcomeBanner = () => {
   };
   
   return (
+    <>
     <Jumbotron>
       <Row className="bannerRow">
         <Col md="4" xs="12">
@@ -47,6 +49,8 @@ const WelcomeBanner = () => {
         </Col>
       </Row>
     </Jumbotron>
+    <Menu />
+ </>
   );
 };
 
