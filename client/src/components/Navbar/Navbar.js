@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 
 import "./Navbar.css";
@@ -5,7 +6,31 @@ import "./Navbar.css";
 import { NavLink, withRouter } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 
-const NavbarComponent = () => {
+import axios from 'axios';
+
+const NavbarComponent = (props) => {
+  const [currentUser, setCurrentUser] = useState('')
+  const [logout, setLogout] = useState(false);
+
+  useEffect(() => {
+    console.log(props.user)
+    setCurrentUser(props.user)
+  }, [props.user,logout]);
+
+  const handleClick = (e) =>{
+    e.preventDefault();
+    axios
+      .get("http://localhost:5000/api/users/logout")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setLogout(!logout)
+    props.history.push('/login');
+  }
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Navbar.Brand as={NavLink} to="/">
@@ -28,9 +53,25 @@ const NavbarComponent = () => {
           <NavLink href="#logout">
             Logout
           </NavLink> */}
-          <Nav.Link as={NavLink} to="/form" activeClassName="activeLink">
-            New User? Register
-          </Nav.Link>
+          {currentUser == "" ? (
+            <>
+              <Nav.Link as={NavLink} to="/form" activeClassName="activeLink">
+                New User? Register
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/login" activeClassName="activeLink">
+                Login
+              </Nav.Link>
+            </>
+          ) : (
+            <>
+              <Nav.Link as={NavLink} to="/success" activeClassName="activeLink">
+                Hi, {currentUser}
+              </Nav.Link>
+              <Nav.Link onClick={handleClick} activeClassName="activeLink">
+                Logout
+              </Nav.Link>
+            </>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

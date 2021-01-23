@@ -32,7 +32,7 @@
     background-color: #330033;
 }
 .loginButton:hover{
-    background-color: blueviolet;
+    background-color: rgba(51,0,51,0.8);
 }
 .header{
    position: relative;
@@ -42,6 +42,12 @@
     font-size: 2em;
     font-weight: bold;
     color: #330033 !important;
+}
+.content *{
+    color: rgb(51, 0, 51) !important;
+}
+.btn:not(:disabled):not(.disabled) {
+    color: white !important;
 }
 @media only screen and (max-width: 800px)
 {
