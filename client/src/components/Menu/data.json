@@ -1,0 +1,40 @@
+{
+    "items" : [
+        {
+            "id": "1",
+            "name": "French Fries",
+            "price": "80",
+            "description": "Fried Potatos with sprinkled Sauce. Served best with Tomato Ketchup"
+        },
+        {
+            "id": "2",
+            "name": "Manchurian",
+            "price": "120",
+            "description":  "Fried Potatos with sprinkled Sauce. Served best with Tomato Ketchup"
+        },
+        {
+            "id": "3",
+            "name": "Honey Chilli Potato",
+            "price": "100",
+            "description":  "Fried Potatos with sprinkled Sauce. Served best with Tomato Ketchup"
+        },
+        {
+            "id": "4",
+            "name": "Mushroom Rice",
+            "price": "80",
+            "description":  "Fried Potatos with sprinkled Sauce. Served best with Tomato Ketchup"
+        },
+        {
+            "id": "5",
+            "name": "Burger",
+            "price": "60",
+            "description":  "Fried Potatos with sprinkled Sauce. Served best with Tomato Ketchup"
+        },
+        {
+            "id": "6",
+            "name": "Pizza",
+            "price": "140",
+            "description":  "Fried Potatos with sprinkled Sauce. Served best with Tomato Ketchup"
+        }
+    ]
+}
