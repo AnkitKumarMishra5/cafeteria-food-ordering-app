@@ -48,7 +48,7 @@ const App = () => {
     <>
       <Container fluid>
         <Suspense fallback={<Loading />}>
-          <NavbarComponent />
+          <NavbarComponent user={newUser.username}/>
           <Switch>
             <Route exact path="/" component={WelcomeBanner} />
             <Route
@@ -61,7 +61,10 @@ const App = () => {
                 <Preview newUser={newUser} handleSubmit={handleSubmit} />
               )}
             />
-            <Route path="/login" component={Login} />
+            <Route
+            path="/login"
+            render={() => <Login newUser={newUser} setNewUser={setNewUser} />}
+            />
             <Route
               path="/success"
               render={() => <Success user={newUser} />}
