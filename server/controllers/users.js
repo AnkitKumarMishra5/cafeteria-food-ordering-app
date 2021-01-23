@@ -12,12 +12,12 @@ export const getUsers = async (req, res) => {
 };
 
 export const createUser = async (req, res) => {
-  const { username, orgName, employeeID, email, mobile, idCard } = req.body;
+  const { username, orgName, employeeId, email, mobile, idCard } = req.body;
 
   const newUser = new User({
     username,
     orgName,
-    employeeID,
+    employeeId,
     email,
     mobile,
     idCard,
@@ -31,8 +31,9 @@ export const createUser = async (req, res) => {
         if (err) {
           res.status(400).json({ message: err.message });
         } else {
+          createdUser.idCard="blah";
           passport.authenticate("local")(req, res, function () {
-            res.status(201).json({ message: "OK" });
+            res.status(201).json(createdUser.regId);
           });
         }
       }

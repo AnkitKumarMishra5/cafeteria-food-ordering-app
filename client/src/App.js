@@ -17,7 +17,6 @@ const WelcomeBanner = lazy(() =>
 );
 const Form = lazy(() => import("./components/Form/Form"));
 const Preview = lazy(() => import("./components/Preview/Preview"));
-const Menu = lazy(() => import("./components/Menu/Menu"));
 const Login = lazy(() => import("./components/Login/Login"));
 const Success = lazy(() => import("./components/Success/Success"));
 const Cart = lazy(() => import("./components/Cart/Cart"));
@@ -26,7 +25,7 @@ const App = () => {
   const [newUser, setNewUser] = useState({
     username: "",
     orgName: "",
-    employeeID: "",
+    employeeId: "",
     email: "",
     mobile: "",
     idCard: "",
@@ -38,6 +37,7 @@ const App = () => {
       .post("http://localhost:5000/api/users", newUser)
       .then((res) => {
         console.log(res.data);
+        setNewUser({...newUser, regId: res.data});
       })
       .catch((err) => {
         console.log(err);
@@ -64,7 +64,7 @@ const App = () => {
             <Route path="/login" component={Login} />
             <Route
               path="/success"
-              render={() => <Success newUser={newUser} />}
+              render={() => <Success user={newUser} />}
             />
             <Route
               path="/cart" component={Cart}

@@ -56,11 +56,11 @@ const FormComponent = (props) => {
               <Form.Label>Employee ID</Form.Label>
               <Form.Control
                 required
-                name="employeeID"
+                name="employeeId"
                 type="text"
                 placeholder="Emp. ID"
-                value={newUser.employeeID}
-                onInput={(e) => setNewUser({...newUser, employeeID: e.target.value})}
+                value={newUser.employeeId}
+                onInput={(e) => setNewUser({...newUser, employeeId: e.target.value})}
               />
             </Form.Group>
             <Form.Group as={Col} md="4">

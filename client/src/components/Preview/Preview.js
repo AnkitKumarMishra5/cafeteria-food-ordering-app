@@ -17,7 +17,7 @@ const Preview = (props) => {
     e.preventDefault()
     console.log(newUser)
     props.handleSubmit()
-    props.history.push('/');
+    props.history.push('/success');
   }
 
   return (
@@ -41,7 +41,7 @@ const Preview = (props) => {
               </tr>
               <tr>
                 <td>Employee ID</td>
-                <td className="values">{newUser.employeeID}</td>
+                <td className="values">{newUser.employeeId}</td>
               </tr>
               <tr>
                 <td>Email</td>
