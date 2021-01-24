@@ -27,7 +27,7 @@ const Preview = (props) => {
         <Card className="preview-card">
           <Card.Img
             variant="top"
-            src={newUser.idCard}
+            src={URL.createObjectURL(newUser.idCard)}
           />
           <Table responsive="xl">
             <tbody>

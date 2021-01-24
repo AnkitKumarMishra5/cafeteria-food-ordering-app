@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 
 import "./Navbar.css";
@@ -41,7 +40,7 @@ const NavbarComponent = (props) => {
           </Nav.Link>
         </Nav>
         <Nav>
-          {currentUser == "" ? (
+          {currentUser === "" ? (
             <>
               <Nav.Link as={NavLink} to="/form" activeClassName="activeLink">
                 New User? Register
