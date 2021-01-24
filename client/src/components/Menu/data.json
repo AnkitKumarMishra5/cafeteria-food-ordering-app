@@ -17,28 +17,28 @@
         {
             "id": "3",
             "image": "https://rachnas-kitchen.com/wp-content/uploads/2014/09/P1070413.jpg",
-            "name": "Honey Chilli Potato",
+            "name": "Chilli Potato",
             "price": "100",
             "description":  "Fried Potatos with sprinkled Sauce. Served best with Tomato Ketchup"
         },
         {
             "id": "4",
             "image": "https://southerndiscourse.com/wp-content/uploads/2019/08/Beef-Mushroom-Rice-Process-768x614.jpg",
-            "name": "Mushroom Rice",
+            "name": "Mush Rice",
             "price": "80",
             "description":  "Fried Potatos with sprinkled Sauce. Served best with Tomato Ketchup"
         },
         {
             "id": "5",
             "image": "https://img.jakpost.net/c/2019/11/12/2019_11_12_82229_1573532922._large.jpg",
-            "name": "Burger",
+            "name": " Veg Burger",
             "price": "60",
             "description":  "Fried Potatos with sprinkled Sauce. Served best with Tomato Ketchup"
         },
         {
             "id": "6",
             "image": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/07/28/09/istock-938742222.jpg?width=982&height=726",
-            "name": "Pizza",
+            "name": "Veg Pizza",
             "price": "140",
             "description":  "Fried Potatos with sprinkled Sauce. Served best with Tomato Ketchup"
         }

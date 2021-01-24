@@ -8,7 +8,6 @@ const Menu = () => {
   let [count, setCount] = useState(0);
   let [show, setShow] = useState(false);
   useEffect(() => {
-    console.log("show" + show);
     if (count === 0) {
       setShow(false);
     }
@@ -39,6 +38,7 @@ const Menu = () => {
                     <Card.Img
                       variant="top"
                       src={item.image}
+                      style={{'height':'170px', 'width': '100%' }}
                     />
                     <Card.Body className="card-body-menu">
                       <Card.Title className="dishName">{item.name}</Card.Title>
