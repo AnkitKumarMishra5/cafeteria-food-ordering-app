@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import {Table, Row, Col, Button} from 'react-bootstrap';
 import './Cart.css';
 const Cart = () => {

@@ -100,7 +100,7 @@ const FormComponent = (props) => {
                 accept=".jpeg,.png"
                 custom
                 ref={idCard}
-                onInput={() => setNewUser({...newUser, idCard: URL.createObjectURL(idCard.current.files[0])})}
+                onInput={() => setNewUser({...newUser, idCard: idCard.current.files[0]})}
               />
             </Form.Group>
             <Form.Group as={Col} md="4">

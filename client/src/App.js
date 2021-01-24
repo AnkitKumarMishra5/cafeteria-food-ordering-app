@@ -47,15 +47,26 @@ const App = () => {
   }, [session]);
 
   const handleSubmit = () => {
-    axios
-      .post("http://localhost:5000/api/users", newUser)
+    var formdata = new FormData();
+    formdata.append('file', newUser.idCard);
+    formdata.append('upload_preset','ercok6k3');
+    
+    axios.post("https://api.cloudinary.com/v1_1/akm5514/image/upload", formdata)
+    .then((response) => {
+      console.log(response.data.secure_url)
+      setNewUser({...newUser, idCard: response.data.secure_url})
+      axios
+      .post("http://localhost:5000/api/users", {...newUser, idCard: response.data.secure_url})
       .then((res) => {
-        console.log(res.data);
         setNewUser({...newUser, regId: res.data});
       })
       .catch((err) => {
         console.log(err);
       });
+    })
+    .catch((error)=>{
+      console.log(error);
+    });
   };
 
   return (
