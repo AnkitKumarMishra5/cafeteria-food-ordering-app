@@ -1,5 +1,5 @@
 // import { useState} from "react";
-import React, { Suspense, lazy, useState } from "react";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -32,6 +32,20 @@ const App = () => {
     password: "",
   });
 
+  const [session, setSession] = useState(false);
+
+  useEffect(() => {
+    setNewUser({
+      username: "",
+      orgName: "",
+      employeeId: "",
+      email: "",
+      mobile: "",
+      idCard: "",
+      password: "",
+    })
+  }, [session]);
+
   const handleSubmit = () => {
     axios
       .post("http://localhost:5000/api/users", newUser)
@@ -48,7 +62,7 @@ const App = () => {
     <>
       <Container fluid>
         <Suspense fallback={<Loading />}>
-          <NavbarComponent user={newUser.username}/>
+          <NavbarComponent user={newUser.username} session={session} setSession={setSession}/>
           <Switch>
             <Route exact path="/" component={WelcomeBanner} />
             <Route

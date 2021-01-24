@@ -9,13 +9,7 @@ import { NavHashLink } from "react-router-hash-link";
 import axios from 'axios';
 
 const NavbarComponent = (props) => {
-  const [currentUser, setCurrentUser] = useState('')
-  const [logout, setLogout] = useState(false);
-
-  useEffect(() => {
-    console.log(props.user)
-    setCurrentUser(props.user)
-  }, [props.user,logout]);
+  const currentUser = props.user;
 
   const handleClick = (e) =>{
     e.preventDefault();
@@ -27,7 +21,7 @@ const NavbarComponent = (props) => {
       .catch((error) => {
         console.log(error);
       });
-    setLogout(!logout)
+    props.setSession(!props.session)
     props.history.push('/login');
   }
 
@@ -45,14 +39,8 @@ const NavbarComponent = (props) => {
           <Nav.Link>
             <NavHashLink to="/#menu">Menu</NavHashLink>
           </Nav.Link>
-          {/* <NavLink href="#menu">Menu</NavLink>
-          <NavLink href="#order">Order</NavLink> */}
         </Nav>
         <Nav>
-          {/* <NavLink href="#profile">Hi, User</NavLink>
-          <NavLink href="#logout">
-            Logout
-          </NavLink> */}
           {currentUser == "" ? (
             <>
               <Nav.Link as={NavLink} to="/form" activeClassName="activeLink">
