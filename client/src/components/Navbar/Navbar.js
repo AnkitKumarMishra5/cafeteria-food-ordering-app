@@ -13,7 +13,7 @@ const NavbarComponent = (props) => {
   const handleClick = (e) =>{
     e.preventDefault();
     axios
-      .get("http://localhost:5000/api/users/logout")
+      .get(`{process.env.REACT_APP_API_ENDPOINT}/logout`)
       .then((res) => {
         console.log(res);
       })

@@ -49,14 +49,14 @@ const App = () => {
   const handleSubmit = () => {
     var formdata = new FormData();
     formdata.append('file', newUser.idCard);
-    formdata.append('upload_preset','ercok6k3');
+    formdata.append('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET);
     
     axios.post("https://api.cloudinary.com/v1_1/akm5514/image/upload", formdata)
     .then((response) => {
       console.log(response.data.secure_url)
       setNewUser({...newUser, idCard: response.data.secure_url})
       axios
-      .post("http://localhost:5000/api/users", {...newUser, idCard: response.data.secure_url})
+      .post(process.env.REACT_APP_API_ENDPOINT, {...newUser, idCard: response.data.secure_url})
       .then((res) => {
         setNewUser({...newUser, regId: res.data});
       })
