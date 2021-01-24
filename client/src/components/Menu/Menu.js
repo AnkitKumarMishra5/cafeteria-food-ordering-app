@@ -39,6 +39,7 @@ const Menu = () => {
                     <Card.Img
                       variant="top"
                       src={item.image}
+                      style={{'height':'170px', 'width': '100%' }}
                     />
                     <Card.Body className="card-body-menu">
                       <Card.Title className="dishName">{item.name}</Card.Title>
