@@ -32,7 +32,7 @@ const App = () => {
     password: "",
   });
 
-  const [logout, setLogout] = useState(false);
+  const [session, setSession] = useState(false);
 
   useEffect(() => {
     setNewUser({
@@ -44,7 +44,7 @@ const App = () => {
       idCard: "",
       password: "",
     })
-  }, [logout]);
+  }, [session]);
 
   const handleSubmit = () => {
     axios
@@ -52,7 +52,6 @@ const App = () => {
       .then((res) => {
         console.log(res.data);
         setNewUser({...newUser, regId: res.data});
-        setLogout(!logout)
       })
       .catch((err) => {
         console.log(err);
@@ -63,7 +62,7 @@ const App = () => {
     <>
       <Container fluid>
         <Suspense fallback={<Loading />}>
-          <NavbarComponent user={newUser.username} logout={logout} setLogout={setLogout}/>
+          <NavbarComponent user={newUser.username} session={session} setSession={setSession}/>
           <Switch>
             <Route exact path="/" component={WelcomeBanner} />
             <Route

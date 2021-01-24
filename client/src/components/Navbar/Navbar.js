@@ -21,7 +21,7 @@ const NavbarComponent = (props) => {
       .catch((error) => {
         console.log(error);
       });
-    props.setLogout(!props.logout)
+    props.setSession(!props.session)
     props.history.push('/login');
   }
 
@@ -39,14 +39,8 @@ const NavbarComponent = (props) => {
           <Nav.Link>
             <NavHashLink to="/#menu">Menu</NavHashLink>
           </Nav.Link>
-          {/* <NavLink href="#menu">Menu</NavLink>
-          <NavLink href="#order">Order</NavLink> */}
         </Nav>
         <Nav>
-          {/* <NavLink href="#profile">Hi, User</NavLink>
-          <NavLink href="#logout">
-            Logout
-          </NavLink> */}
           {currentUser == "" ? (
             <>
               <Nav.Link as={NavLink} to="/form" activeClassName="activeLink">
