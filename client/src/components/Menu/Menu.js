@@ -8,7 +8,6 @@ const Menu = () => {
   let [count, setCount] = useState(0);
   let [show, setShow] = useState(false);
   useEffect(() => {
-    console.log("show" + show);
     if (count === 0) {
       setShow(false);
     }
