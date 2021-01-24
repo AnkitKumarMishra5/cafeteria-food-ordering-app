@@ -13,12 +13,10 @@ const FormComponent = (props) => {
 
   useEffect(() => {
     bsCustomFileInput.init();
-    console.log(newUser);
-  },[newUser])
+  })
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    console.log(newUser)
     props.history.push('/preview');
   }
 

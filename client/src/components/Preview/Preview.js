@@ -15,7 +15,6 @@ const Preview = (props) => {
   
   const handleSubmit = (e) =>{
     e.preventDefault()
-    console.log(newUser)
     props.handleSubmit()
     props.history.push('/success');
   }

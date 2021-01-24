@@ -21,7 +21,7 @@ const Login = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/users/login", user)
+      .post(`${process.env.REACT_APP_API_ENDPOINT}/login`, user)
       .then((res) => {
           props.setNewUser(res.data);
           props.history.push('/');

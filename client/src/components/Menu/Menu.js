@@ -36,7 +36,7 @@ const Menu = () => {
                             <Card.Body className="card-body-menu">
                                 <Card.Title className="dishName">French Fries</Card.Title>
                                 <Card.Title className="price">Rs 80</Card.Title>
-                                <Card.Text class="menu-text">
+                                <Card.Text className="menu-text">
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
@@ -54,7 +54,7 @@ const Menu = () => {
                             <Card.Body className="card-body-menu">
                                 <Card.Title className="dishName">French Fries</Card.Title>
                                 <Card.Title className="price">Rs 80</Card.Title>
-                                <Card.Text class="menu-text">
+                                <Card.Text className="menu-text">
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
@@ -72,7 +72,7 @@ const Menu = () => {
                             <Card.Body className="card-body-menu">
                                 <Card.Title className="dishName">French Fries</Card.Title>
                                 <Card.Title className="price">Rs 80</Card.Title>
-                                <Card.Text class="menu-text">
+                                <Card.Text className="menu-text">
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
@@ -90,7 +90,7 @@ const Menu = () => {
                             <Card.Body className="card-body-menu">
                                 <Card.Title className="dishName">French Fries</Card.Title>
                                 <Card.Title className="price">Rs 80</Card.Title>
-                                <Card.Text class="menu-text">
+                                <Card.Text className="menu-text">
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
@@ -108,7 +108,7 @@ const Menu = () => {
                             <Card.Body className="card-body-menu">
                                 <Card.Title className="dishName">French Fries</Card.Title>
                                 <Card.Title className="price">Rs 80</Card.Title>
-                                <Card.Text class="menu-text">
+                                <Card.Text className="menu-text">
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
@@ -126,7 +126,7 @@ const Menu = () => {
                             <Card.Body className="card-body-menu">
                                 <Card.Title className="dishName">French Fries</Card.Title>
                                 <Card.Title className="price">Rs 80</Card.Title>
-                                <Card.Text class="menu-text">
+                                <Card.Text className="menu-text">
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
